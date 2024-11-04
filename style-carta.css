@@ -1,0 +1,358 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header, main, footer {
+    padding: 20px;
+}
+
+.grid{
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+
+/*-------------HEADER---------------*/
+.header{
+    grid-area: header;
+    background-color: white;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+
+li{
+    color: #50C878;
+    font-size: 22px;
+    margin: 10px 80px;
+    height: 45px;
+    width: 70px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+li:last-child{
+    width: 140px;
+}
+
+li a {
+    color: #50C878;
+    text-decoration: none;
+    position: absolute;
+    top: 40px;
+}
+
+/*----------HEADER QUERIES---------*/
+
+li:hover{
+    a{
+        color: white; 
+    }
+    background-color: #50C878;
+    color: white;
+    opacity: 0.8;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+/*-------------MAIN----------------*/
+.main{
+    grid-area: main;
+    height: 550px;
+    background-image: url(imagenes/fondo-frente.jpg);
+    opacity: 0.65;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*--------------RECTANGULOS MAIN-------------- */
+.box-carta {
+    width: 250px;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.click{
+    font-size: 12px;
+}
+
+.box-carta:hover:nth-child(1){
+    .text-backround{
+        background-color: #0007;
+        box-shadow: 0 0 10px 0 black;
+    }
+    background-image: url(imagenes/picada.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 10px 0 black;
+}
+
+.box-carta:hover:nth-child(2){
+    .text-backround{
+        background-color: #0007;
+        box-shadow: 0 0 10px 0 black;
+    }
+    background-image: url(imagenes/principales.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 10px 0 black;
+}
+.box-carta:hover:nth-child(3){
+    .text-backround{
+        background-color: #0007;
+        box-shadow: 0 0 10px 0 black;
+    }
+    background-image: url(imagenes/postresito.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 10px 0 black;
+}
+.box-carta:hover:nth-child(4){
+    .text-backround{
+        background-color: #0007;
+        box-shadow: 0 0 10px 0 black;
+    }
+    background-image: url(imagenes/bebidas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 10px 0 black;
+    
+}
+
+/*--------ORGANIZAR RECTANGULOS DEL MAIN--------------------*/
+.main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 575px;
+    background-image: url(imagenes/fondo-frente.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*------------FOOTER----------------*/
+.footer{
+    grid-area: footer;
+    background-color: #50C878;
+    height: 58px;
+}
+
+.ubicacion{
+    width: 30px;
+    height: 45px;
+    bottom: 12px;
+    opacity: 0.3;
+    margin-top: 6px;
+    right: 20px;
+    position: absolute;
+}
+p{
+    color: white;
+    position: absolute;
+    right: 70px;
+    bottom: 25px;
+}
+
+.horario{
+    position: absolute;
+    color: white;
+    left: 40px;
+    font-size: 17px;
+}
+
+/*----------ESTILOS PARA EL MODAL CONTACTANOS--------*/
+.modal-contact {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-contact {
+    background-color: #50C878;
+    margin: 15% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    box-shadow: 0 0 40px 0 black;
+    width: 40%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.close{
+    color: white;
+    position: absolute;
+    left: 1045px;
+    top: 230px;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a{
+    color: white;
+    position: absolute;
+    bottom: 320px;
+}
+
+.whatsapp{
+    left: 580px;
+    top: 345px;
+}
+
+.telefono{
+    left: 840px;
+    top: 345px;
+}
+
+/*----------ESTILOS PARA EL MODAL PLATOS--------*/
+.modal-carta {
+    background-image: url(imagenes/probar3.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: cover;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-carta {
+    border-radius: 10px;;
+    background-color: white; 
+    box-shadow: 0 0 20px 0 black; 
+    width: 650px; 
+    height: 600px; 
+    overflow: auto; 
+    text-align: center; 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    h1{
+        margin-top: 40px;
+        color: #50C878;
+        font-family:'Times New Roman', Times, serif
+    }
+    p{
+        font-size: 30px;
+        color:#50C878;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        position: absolute;
+        top: 130px;
+        text-align: start;
+        left: 20px;
+    }
+}
+
+.close2 {
+    position: absolute;
+    top: 2px;  
+    right: 10px; 
+    color: #50C878;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close2:hover {
+    color: black;  /* Opcional, para que cambie de color cuando se coloque el cursor encima */
+}
+
+/*----------CARTA DESPLEGABLE------------------*/
+.texto1{
+    margin-top: 10px;
+}
+
+.texto2{
+    margin-top: 40px;
+}
+
+.texto3{
+    margin-top: 70px;
+}
+
+.texto4{
+    margin-top: 100px;
+}
+.texto5{
+    margin-top: 130px;
+}
+
+.texto6{
+    margin-top: 160px;
+}
+
+.texto7{
+    margin-top: 190px;
+}
+
+.texto8{
+    margin-top: 220px;
+}
+.texto9{
+    margin-top: 250px;
+}
+
+.texto10{
+    margin-top: 280px;
+}
+
+.texto11{
+    margin-top: 310px;
+}
+
+h1:hover{
+    text-shadow: 0 0 8px #50C878;
+}

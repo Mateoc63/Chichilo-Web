@@ -1,0 +1,177 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header, main, footer {
+    padding: 20px;
+}
+
+.grid{
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+
+/*-------------HEADER---------------*/
+.header{
+    grid-area: header;
+    background-color: white;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+
+li{
+    color: #50C878;
+    font-size: 22px;
+    margin: 10px 80px;
+    height: 45px;
+    width: 70px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+/*OJO*/
+li a {
+    color: #50C878;
+    text-decoration: none;
+    position: absolute;
+    top: 40px;
+}
+
+li:last-child{
+    width: 140px;
+}
+
+/*----------HEADER QUERIES---------*/
+li:hover{
+    a{
+        color: white; 
+    }
+    background-color: #50C878;
+    color: white;
+    opacity: 0.8;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+/*-------------MAIN----------------*/
+.main{
+    grid-area: main;
+    height: 570px;
+    background-image: url(imagenes/fondo-frente.jpg);
+    opacity: 0.65;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*------------FOOTER----------------*/
+.footer {
+    grid-area: footer;
+    background-color: #50C878;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; 
+}
+
+.horario {
+    color: white;
+    font-size: 17px;
+    margin-left: 20px;
+}
+
+.ubicacion-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+}
+
+.ubicacion {
+    width: 30px;
+    height: 45px;
+    opacity: 0.3;
+    margin-right: 2px; 
+}
+
+.footer p {
+    color: white;
+    margin-right: 15px; 
+}
+
+/*----------ESTILOS PARA EL MODAL--------*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #50C878;
+    margin: 15% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    box-shadow: 0 0 40px 0 black;
+    width: 40%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    left: 1040px;
+    top: 230px;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a{
+    color: white;
+    position: absolute;
+    bottom: 380px;
+}
+
+.whatsapp{
+    left: 580px;
+}
+
+.telefono{
+    left: 840px;
+}

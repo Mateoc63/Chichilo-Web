@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chichilo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grid">
+        <!-- HEADER -->
+        <header class="header">
+            <img class="logo" src="imagenes/logo.png" alt="">
+            <ul>
+                <li>Inicio</li>
+                <li><a href="carta.html">Carta</a></li>
+                <li id="contactanos">Contactanos</li>
+            </ul>
+            <img class="redes" src="redes.webp" alt="">
+        </header>
+
+        <!-- MAIN -->
+        <main class="main">
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p class="horario">HORARIOS: de 12:30 a 15:00 horas y de 20:30 a 24 horas.</p>
+            <div class="ubicacion-container">
+                <p>CAMARONES 1901-CABA</p>
+                <img class="ubicacion" src="imagenes/ubicacion.png" alt="">
+            </div>
+        </footer>         
+    </div>
+
+    <!-- MODAL PARA "CONTACTANOS" -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="contact-info">
+                <div>
+                    <img src="imagenes/whatsapp.png" class="contact-logo">
+                    <a class="whatsapp">11 5020 0152</a>
+                </div>
+                <div>
+                    <img src="imagenes/telefono.png" class="contact-logo">
+                    <a class="telefono">4584-1263</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // OBETENER EL MODAL
+        var modal = document.getElementById("contactModal");
+    
+        // OBTENER EL <li> DE CONTACTANOS
+        var btn = document.getElementById("contactanos");
+    
+        // OBTENER EL <span> QUE CIERRA EL MODAL DE "CONTACTANOS"
+        var span = document.getElementsByClassName("close")[0];
+    
+        // CUANDO EL USUARIO HACE CLICK EN "CONTACTANOS", SE MUESTRA EL MODAL
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    
+        // CUANDO EL USUARIO HACE CLICK EN <SPAN> (X), SE CIERRA EL MODAL DE "CONTACTANOS"
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        // SI HACE CLICK FUERA DEL MODAL TAMBIEN SE CIERRA
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>  
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chichilo</title>
+    <link rel="stylesheet" href="style-carta.css">
+</head>
+<body>
+    <div class="grid">
+        <!-- HEADER -->
+        <header class="header">
+            <img class="logo" src="imagenes/logo.png" alt="">
+            <ul>
+                <li><a href="principal.html">Inicio</a></li>
+                <li>Carta</li>
+                <li id="contactanos">Contactanos</li>
+            </ul>
+            <img class="redes" src="redes.webp" alt=""><a href="https://www.instagram.com/cantinachichilo/?hl=es-es"></a>
+        </header>
+
+        <!-- MAIN -->
+        <main class="main">
+            <div class="box-carta">
+                <div class="text-backround">
+                    ENTRADAS
+                    <div class="click">
+                         (Click para abrir)
+                    </div>
+                </div>
+            </div>
+            <div class="box-carta" id="platos">
+                <div class="text-backround">
+                    PLATOS
+                    <div class="click">
+                        (Click para abrir)
+                   </div>
+                </div>
+            </div>
+            <div class="box-carta">
+                <div class="text-backround">
+                    POSTRES
+                    <div class="click">
+                        (Click para abrir)
+                   </div>
+                </div>
+            </div>
+            <div class="box-carta">
+                <div class="text-backround">
+                    BEBIDAS
+                    <div class="click">
+                        (Click para abrir)
+                   </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- FOOTER -->
+        <footer class="footer">
+            <img class="ubicacion" src="ubicacion.png" alt=""><p>CAMARONES 1901-CABA</p>
+            <p class="horario">HORARIOS: de 12:30 a 15:00 horas y de 20:30 a 24 horas. </p>
+        </footer>    
+    </div>
+
+    <!-- MODAL PARA "CONTACTANOS" -->
+    <div id="contactModal" class="modal-contact">
+        <div class="modal-content-contact">
+            <span class="close">&times;</span>
+            <div class="contact-info">
+                <div>
+                    <img src="imagenes/whatsapp.png" class="contact-logo">
+                    <a class="whatsapp">11 5020 0152</a>
+                </div>
+                <div>
+                    <img src="imagenes/telefono.png" class="contact-logo">
+                    <a class="telefono">4584-1263</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PARA "PLATOS" -->
+    <div id="platosModal" class="modal-carta">
+        <div class="modal-content-carta">
+            <span class="close2">&times;</span>
+            <h1>PLATOS PRINCIPALES</h1>
+            <div box-modal>
+                <p class="texto1">Lentejas a caballo ------------------------ $8900</p>
+                <p class="texto2">Pastas con chichiriceci ------------------ $8000</p>
+                <p class="texto3">Mondongo a la italiana ------------------ $12000</p>
+                <p class="texto4">Riñones al vino blanco ------------------ $9500</p>
+                <p class="texto5">Calamarettis a la escarpetta ----------- $13200</p>
+                <p class="texto6">Fusiles al ferretero ---------------------- $8600</p>
+                <p class="texto7">Ranas a la provenzal -------------------- $12500</p>
+                <p class="texto8">Caracoles a la bordaleza --------------- $9800</p>
+                <p class="texto9">Rabas a la calabria ----------------------- $15000</p>
+                <p class="texto10">Merluza al ajillo -------------------------- $11000</p>
+                <p class="texto11">Gambas al ajillo -------------------------- $10500</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+// OBTENER EL MODAL DE "CONTACTANOS"
+var contactModal = document.getElementById("contactModal");
+
+// OBTENER EL <li> DE CONTACTANOS
+var contactBtn = document.getElementById("contactanos");
+
+// OBTENER EL <span> QUE CIERRA EL MODAL DE "CONTACTANOS"
+var contactSpan = document.getElementsByClassName("close")[0];
+
+// CUANDO EL USUARIO HACE CLICK EN "CONTACTANOS", SE MUESTRA EL MODAL
+contactBtn.onclick = function() {
+    contactModal.style.display = "block";
+}
+
+// CUANDO EL USUARIO HACE CLICK EN <SPAN> (X), SE CIERRA EL MODAL DE "CONTACTANOS"
+contactSpan.onclick = function() {
+    contactModal.style.display = "none";
+}
+
+// SI HACE CLICK FUERA DEL MODAL TAMBIEN SE CIERRA
+window.onclick = function(event) {
+    if (event.target == contactModal) {
+        contactModal.style.display = "none";
+    }
+}
+
+// OBTENER EL MODAL DE "PLATOS"
+var platosModal = document.getElementById("platosModal");
+
+// OBTENER EL ELEMENTO <div> DE "PLATOS"
+var platosBtn = document.getElementById("platos");
+
+// OBTENER EL <span> QUE CIERRA EL MODAL DE "PLATOS" CON LA CLASE "CLOSE2"
+var platosSpan = document.getElementsByClassName("close2")[0];
+
+// CUANDO EL USUARIO HACE CLICK EN "PLATOS", SE MUESTRA EL MODAL
+platosBtn.onclick = function() {
+    platosModal.style.display = "block";
+}
+
+// CUANDO EL USUARIO HACE CLICK EN <span> (X), SE CIERRA EL MODAL DE "PLATOS"
+platosSpan.onclick = function() {
+    platosModal.style.display = "none";
+}
+
+// SI HACE CLICK FUERA DEL MODAL TAMBIEN SE CIERRA
+window.onclick = function(event) {
+    if (event.target == platosModal) {
+        platosModal.style.display = "none";
+    }
+}
+    </script>  
+</body>
+</html>
