@@ -1,177 +1,603 @@
-*{
-    box-sizing: border-box;
+/* General Reset */
+* {
     margin: 0;
-    font-family: sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header, main, footer {
-    padding: 20px;
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
 }
 
-.grid{
-    display: grid;
-    grid-template-areas:
-    "header header header"
-    "main main main"
-    "footer footer footer";
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/*-------------HEADER---------------*/
-.header{
-    grid-area: header;
-    background-color: white;
-    height: 100px;
+/* HEADER */
+.header {
     display: flex;
     justify-content: space-between;
-}
-
-ul{
-    display: flex;
-    list-style-type: none;
-}
-
-li{
-    color: #50C878;
-    font-size: 22px;
-    margin: 10px 80px;
-    height: 45px;
-    width: 70px;
-    display: flex;
-    text-align: center;
     align-items: center;
-    justify-content: center;
+    padding: 5px 40px;
+    background: rgba(33, 33, 33, 0.9); /* Fondo semi-transparente */
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte para mayor profundidad */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-/*OJO*/
-li a {
-    color: #50C878;
+
+.header:hover {
+    background-color: rgba(33, 33, 33, 1); /* Fondo opaco al hacer hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.logo-container {
+    flex: 0 1 auto;
+}
+
+.logo {
+    height: auto;
+    max-height: 60px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .nav-link {
     text-decoration: none;
-    position: absolute;
-    top: 40px;
+    color: #fff;
+    margin-top: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.2s ease-in-out, border-bottom 0.3s ease;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
-li:last-child{
-    width: 140px;
+.navbar .nav-link:hover {
+    background-color: #ffc107;
+    color: #212121;
+    transform: translateY(-3px);
+    border-bottom: 2px solid #212121; /* Línea sutil en hover */
 }
 
-/*----------HEADER QUERIES---------*/
-li:hover{
-    a{
-        color: white; 
-    }
-    background-color: #50C878;
+.navbar .nav-link:active {
+    transform: translateY(1px);
+}
+
+.main {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Sección de Bienvenida con Fondo */
+.hero {
+    height: 100vh; /* Toma toda la altura de la pantalla */
+    background: url('imagenes/frente-chichilo.jpg') center/cover no-repeat; /* Imagen de fondo */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color: white;
-    opacity: 0.8;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Efecto de sombreado sobre la imagen */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen para que el texto resalte */
+    z-index: 0;
+}
+
+/* Contenido de la Bienvenida */
+.hero-content {
+    position: relative;
+    z-index: 1; /* Coloca el texto por encima del overlay */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra para resaltar el texto */
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    max-width: 700px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content .btn-primary {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    background-color: #f04e30;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-content .btn-primary:hover {
+    background-color: #d93a1c;
+    transform: scale(1.05);
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 4rem 3rem;
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 4rem auto;
+    max-width: 1200px;
+}
+
+.feature {
+    text-align: center;
+    flex: 1;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-img-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
     border-radius: 10px;
-    transition-duration: 0.3s;
 }
 
-/*-------------MAIN----------------*/
-.main{
-    grid-area: main;
-    height: 570px;
-    background-image: url(imagenes/fondo-frente.jpg);
-    opacity: 0.65;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.feature-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-/*------------FOOTER----------------*/
+.feature h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.75rem;
+    color: #333;
+    margin-top: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.feature p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.feature:hover .feature-img {
+    transform: scale(1.05);
+}
+
+.feature:hover h2,
+.feature:hover p {
+    color: #f16c2b; /* Color llamativo al hacer hover */
+}
+
+.feature-img-container:hover .feature-img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+}
+
+/* FOOTER */
 .footer {
-    grid-area: footer;
-    background-color: #50C878;
-    height: 65px;
+    background-color: #212121;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    padding: 40px 20px;
+}
+
+/* Parte superior del footer (Logo y Redes Sociales) */
+.footer-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; 
+    margin-bottom: 30px;
+    gap: 40px;
 }
 
-.horario {
-    color: white;
-    font-size: 17px;
-    margin-left: 20px;
+.footer-logo img {
+    height: 60px;
+    width: auto;
 }
 
-.ubicacion-container {
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+.social-icon.instagram:hover {
+    background-color: #E1306C;
+}
+
+.social-icon.facebook:hover {
+    background-color: #1877f2;
+}
+
+.social-icon.twitter:hover {
+    background-color: #1DA1F2;
+}
+
+/* Parte inferior del footer (Información y derechos reservados) */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.footer-info {
+    font-size: 1.1rem;
+}
+
+.footer-info p {
+    margin: 5px 0;
     display: flex;
     align-items: center;
-    margin-left: auto; 
+    color: #b0b0b0;
 }
 
-.ubicacion {
-    width: 30px;
-    height: 45px;
-    opacity: 0.3;
-    margin-right: 2px; 
-}
-
-.footer p {
+.footer-info i {
     color: white;
-    margin-right: 15px; 
+    margin-right: 10px;
 }
 
-/*----------ESTILOS PARA EL MODAL--------*/
+.footer-copy {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    text-align: right;
+}
+
+.footer-copy p {
+    margin: 0;
+}
+
+/* Media Queries para mejorar la responsividad */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* Modal - Estilo General */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-dialog {
+    background: #ffffff; /* Fondo del modal */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+
+/* Encabezado del Modal */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333333;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Cuerpo del Modal */
+.modal-body {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.modal-description {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Opciones de Contacto */
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    color: #333333;
+}
+
+.contact-icon {
+    font-size: 1.8rem;
+    color: #4CAF50; /* Color de WhatsApp */
+}
+
+.contact-link {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #f04e30; /* Color al pasar el cursor */
+}
+
+/* Pie del Modal */
+.modal-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal-footer .btn-primary {
+    background: #f04e30;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modal-footer .btn-primary:hover {
+    background: #d93a1c;
+}
+/* Media Query */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/*NUUUUUUEVO*/
+/* General del Modal */
+/* Configuración del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto; /* Habilitar scroll si el contenido excede el tamaño */
 }
 
-.modal-content {
-    background-color: #50C878;
-    margin: 15% auto;
-    padding: 50px;
-    border: 1px solid #888;
-    box-shadow: 0 0 40px 0 black;
-    width: 40%;
-    text-align: center;
-    border-radius: 10px;
+/* Contenedor interno del modal */
+.modal-dialog.carta {
+    max-height: 90vh; /* Limitar la altura del modal al 90% del viewport */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
 }
 
-.contact-info {
+/* Animación de entrada */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Encabezado */
+.modal-header {
+    background: #f04e30;
+    color: white;
+    padding: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
-.contact-logo {
-    width: 50px;
-    height: 50px;
-}
-
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
+.modal-title {
+    font-size: 1.8rem;
     font-weight: bold;
-    position: absolute;
-    left: 1040px;
-    top: 230px;
 }
 
-.close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-a{
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: white;
-    position: absolute;
-    bottom: 380px;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.whatsapp{
-    left: 580px;
+.close-btn:hover {
+    color: #ffcec1;
 }
 
-.telefono{
-    left: 840px;
+/* Cuerpo del Modal */
+.modal-body {
+    padding: 20px;
+    background: #f9f9f9;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* Estilos de las Secciones */
+.carta-seccion {
+    margin-bottom: 20px;
+}
+
+.carta-seccion h3 {
+    font-size: 1.6rem;
+    color: #333333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f04e30;
+    padding-bottom: 5px;
+}
+
+.carta-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.carta-items li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.2rem;
+    color: #555555;
+}
+
+.carta-items li span {
+    font-size: 1rem;
+}
+
+/* Pie del Modal */
+.modal-footer {
+    background: #f4f4f4;
+    padding: 10px;
+    text-align: right;
+}
+
+.modal-footer .btn-primary {
+    background: #f04e30;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modal-footer .btn-primary:hover {
+    background: #d93a1c;
+}
+
+/* Botón para Abrir Modal */
+.btn-explora {
+    background: #f04e30;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-explora:hover {
+    background: #d93a1c;
 }

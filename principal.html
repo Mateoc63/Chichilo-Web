@@ -4,78 +4,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chichilo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <div class="grid">
+<body>
+
+    <div class="container-fluid">
         <!-- HEADER -->
         <header class="header">
-            <img class="logo" src="imagenes/logo.png" alt="">
-            <ul>
-                <li>Inicio</li>
-                <li><a href="carta.html">Carta</a></li>
-                <li id="contactanos">Contactanos</li>
-            </ul>
-            <img class="redes" src="redes.webp" alt="">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="logo-container">
+                    <img class="logo" src="imagenes/logo.png" alt="Chichilo Logo">
+                </div>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="javascript:void(0)" class="nav-link" id="abrirCarta">Carta</a></li>
+                        <li><a href="javascript:void(0)" class="nav-link" id="contactanos">Contáctanos</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
         <!-- MAIN -->
         <main class="main">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>¡Bienvenidos a Chichilo!</h1>
+                    <p>Descubre nuestra deliciosa carta de platos y bebidas, creados con pasión y tradición.</p>
+                    <button id="exploraCarta" class="btn-explora">Explora la Carta</button>
+                </div>
+            </section>
+
+            <!-- Sección Destacados -->
+            <section class="features">
+                <div class="feature">
+                    <div class="feature-img-container">
+                        <img src="imagenes/chichilo-bar.png" alt="Ambiente" class="feature-img">
+                    </div>
+                    <h2>Ambiente único</h2>
+                    <p>Un lugar acogedor y moderno para disfrutar con amigos y familia.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-img-container">
+                        <img src="imagenes/comida-chichilo.jpg" alt="Comida" class="feature-img">
+                    </div>
+                    <h2>Gastronomía exquisita</h2>
+                    <p>Platos elaborados con los mejores ingredientes y tradición.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-img-container">
+                        <img src="imagenes/bebidas.jpg" alt="Bebidas" class="feature-img">
+                    </div>
+                    <h2>Bebidas exclusivas</h2>
+                    <p>Cócteles y tragos que acompañan cada momento especial.</p>
+                </div>
+            </section>
         </main>
 
         <!-- FOOTER -->
         <footer class="footer">
-            <p class="horario">HORARIOS: de 12:30 a 15:00 horas y de 20:30 a 24 horas.</p>
-            <div class="ubicacion-container">
-                <p>CAMARONES 1901-CABA</p>
-                <img class="ubicacion" src="imagenes/ubicacion.png" alt="">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="imagenes/logo.png" alt="Chichilo Logo">
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/cantinachichilo" target="_blank" class="social-icon instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/cantinachichilo" target="_blank" class="social-icon facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/cantinachichilo" target="_blank" class="social-icon twitter">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+                </div>
             </div>
-        </footer>         
+
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <p><i class="bi bi-geo-alt"></i> CAMARONES 1901, CABA</p>
+                    <p><i class="bi bi-clock"></i> 12:30 - 15:00 y 20:30 - 24:00</p>
+                </div>
+                <div class="footer-copy">
+                    <p>&copy; 2025 Chichilo | Todos los derechos reservados</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- MODAL PARA "CONTACTANOS" -->
     <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="contact-info">
-                <div>
-                    <img src="imagenes/whatsapp.png" class="contact-logo">
-                    <a class="whatsapp">11 5020 0152</a>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Contáctanos</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Estamos aquí para ayudarte. Puedes contactarnos a través de los siguientes medios:
+                </p>
+                <div class="contact-options">
+                    <div class="contact-item">
+                        <i class="bi bi-whatsapp contact-icon"></i>
+                        <a href="https://wa.me/1150200152" class="contact-link" target="_blank">11 5020 0152</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-telephone contact-icon"></i>
+                        <span class="contact-link">4584-1263</span>
+                    </div>
                 </div>
-                <div>
-                    <img src="imagenes/telefono.png" class="contact-logo">
-                    <a class="telefono">4584-1263</a>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary close-btn" id="closeFooterModal">Cerrar</button>
             </div>
         </div>
     </div>
 
+    <!-- MODAL DE LA CARTA -->
+    <div id="cartaModal" class="modal">
+        <div class="modal-dialog carta">
+            <div class="modal-header">
+                <h2 class="modal-title">Nuestra Carta</h2>
+                <button class="close-btn" id="closeCartaModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- SECCIÓN: ENTRADAS -->
+                <div class="carta-seccion">
+                    <h3>Entradas</h3>
+                    <ul class="carta-items">
+                        <li>
+                            <span>Bruschettas de Tomate</span>
+                            <span>$800</span>
+                        </li>
+                        <li>
+                            <span>Empanadas Gourmet</span>
+                            <span>$700</span>
+                        </li>
+                        <li>
+                            <span>Tartare de Salmón</span>
+                            <span>$1,200</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- SECCIÓN: PLATOS PRINCIPALES -->
+                <div class="carta-seccion">
+                    <h3>Platos Principales</h3>
+                    <ul class="carta-items">
+                        <li>
+                            <span>Chivito Chichilo</span>
+                            <span>$2,300</span>
+                        </li>
+                        <li>
+                            <span>Ensalada Mediterránea</span>
+                            <span>$1,100</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary close-btn" id="closeCartaModalFooter">Cerrar</button>
+            </div>
+        </div>
+    </div>
     <script>
-        // OBETENER EL MODAL
-        var modal = document.getElementById("contactModal");
-    
-        // OBTENER EL <li> DE CONTACTANOS
-        var btn = document.getElementById("contactanos");
-    
-        // OBTENER EL <span> QUE CIERRA EL MODAL DE "CONTACTANOS"
-        var span = document.getElementsByClassName("close")[0];
-    
-        // CUANDO EL USUARIO HACE CLICK EN "CONTACTANOS", SE MUESTRA EL MODAL
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-    
-        // CUANDO EL USUARIO HACE CLICK EN <SPAN> (X), SE CIERRA EL MODAL DE "CONTACTANOS"
-        span.onclick = function() {
+    // Obtener elementos del modal
+    const modal = document.getElementById("contactModal");
+    const openBtn = document.getElementById("contactanos");
+    const closeBtns = document.querySelectorAll(".close-btn");
+    // Abrir el modal
+    openBtn.addEventListener("click", () => {
+        modal.style.display = "flex";
+    });
+    // Cerrar el modal al hacer clic en cualquier botón de cerrar
+    closeBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    });
+    // Cerrar el modal al hacer clic fuera del contenido
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
             modal.style.display = "none";
         }
-    
-        // SI HACE CLICK FUERA DEL MODAL TAMBIEN SE CIERRA
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+    });
+    </script>
+    <script>
+        // Obtener elementos
+        const cartaModal = document.getElementById("cartaModal");
+        const exploraBtn = document.getElementById("exploraCarta");
+        const closeCartaBtns = document.querySelectorAll(".close-btn");
+        document.getElementById("abrirCarta").addEventListener("click", () => {
+            cartaModal.style.display = "flex"; // Abre el modal de la carta
+        });
+
+        // Abrir modal al hacer clic en el botón
+        exploraBtn.addEventListener("click", () => {
+            cartaModal.style.display = "flex";
+        });
+
+        // Cerrar modal al hacer clic en los botones de cierre
+        closeCartaBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                cartaModal.style.display = "none";
+            });
+        });
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.addEventListener("click", (event) => {
+            if (event.target === cartaModal) {
+                cartaModal.style.display = "none";
             }
-        }
-    </script>  
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
