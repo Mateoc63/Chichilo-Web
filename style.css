@@ -88,7 +88,7 @@ header {
 
 /* Estilo para el botón de hamburguesa */
 .hamburger {
-    display: none;  /* Ocultar por defecto */
+    display: none;  
     font-size: 2rem;
     background: none;
     border: none;
@@ -454,36 +454,34 @@ footer .social-icons a:hover {
     padding-bottom: 8px;
 }
 /*-----------RESPONSIVE-----------*/
-/* General Styles for Smaller Screens */
 @media (max-width: 1200px) {
     .navbar {
-        padding: 0 15px;  /* Reduce padding in navbar */
+        padding: 0 15px;  
     }
     .hero h1 {
-        font-size: 3.5rem;  /* Reduces the size of the headline */
+        font-size: 3.5rem;  
     }
     .hero p {
-        font-size: 1.2rem;  /* Smaller paragraph size */
+        font-size: 1.2rem;  
     }
 }
 
-/* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
     .hero {
-        height: 70vh;  /* Smaller height for hero section */
-        padding-left: 50px;  /* Adjust padding */
+        height: 70vh;  
+        padding-left: 50px; 
     }
     
     .navbar .logo h1 {
-        font-size: 2rem;  /* Adjust logo size */
+        font-size: 2rem;  
     }
 
     .nav-links {
-        gap: 15px;  /* Smaller gap between links */
+        gap: 15px;  
     }
 
     .card {
-        width: 48%;  /* Two cards in a row */
+        width: 48%;  
     }
     
     .carta-cards {
@@ -491,7 +489,7 @@ footer .social-icons a:hover {
     }
     
     .contact-content {
-        gap: 20px;  /* Reduce gap between blocks */
+        gap: 20px;  
         flex-direction: column;
     }
 
@@ -501,35 +499,34 @@ footer .social-icons a:hover {
     }
 }
 
-/* Mobile Devices (max-width: 768px) */
 @media (max-width: 768px) {
     .navbar {
         margin-top: -20px;
-        display: flex;                  /* Usar flexbox */
-        justify-content: space-between;  /* Espacio entre el logo y el botón */
-        align-items: center;            /* Alinea los elementos verticalmente */
-        width: 100%;                    /* Asegura que ocupe todo el ancho */
+        display: flex;                 
+        justify-content: space-between;  
+        align-items: center;            
+        width: 100%;                   
         background-color: #333;
         padding: 15px;
     }
 
     .navbar .logo {
         display: flex;
-        justify-content: flex-start;    /* El logo se alinea a la izquierda */
+        justify-content: flex-start;    
     }
 
     .navbar .logo h1 {
-        font-size: 1.8rem;  /* Ajusta el tamaño del logo */
+        font-size: 1.8rem; 
     }
 
     .nav-links {
-        display: none;        /* Ocultar el menú por defecto */
+        display: none;       
         flex-direction: column;
         gap: 15px;
         width: 100%;
         text-align: center;
-        position: absolute;      /* Posiciona el menú debajo del navbar */
-        top: 75%;               /* Colócalo justo debajo */
+        position: absolute;      
+        top: 75%;             
         left: 0;
         right: 0;
         background-color: #333;
@@ -537,52 +534,52 @@ footer .social-icons a:hover {
     }
 
     .nav-links.active {
-        display: flex;  /* Muestra el menú cuando tiene la clase 'active' */
+        display: flex;  
     }
 
     .hamburger {
-        display: block;           /* Mostrar el botón de hamburguesa */
-        cursor: pointer;          /* Cambiar cursor al pasar por encima */
+        display: block;           
+        cursor: pointer;          
     }
 
     .navbar .logo h1 {
-        font-size: 1.8rem;  /* Ajustar el tamaño del logo */
+        font-size: 1.8rem; 
     }
 
     .hero {
         display: flex;
         justify-content: center;
         padding-top: 0px;
-        height: 60vh;  /* Even smaller hero section */
-        text-align: center;  /* Center the text */
+        height: 60vh;  
+        text-align: center; 
     }
 
     .hero h1 {
-        font-size: 2.5rem;  /* Smaller heading */
+        font-size: 2.5rem;  
     }
     
     .hero p {
-        font-size: 1rem;  /* Smaller paragraph */
+        font-size: 1rem;  
     }
 
     .btn-primary {
-        font-size: 1rem;  /* Smaller button */
+        font-size: 1rem;
         padding: 12px 30px;
     }
 
     .carta-cards {
-        flex-direction: column;  /* Stack cards vertically */
+        flex-direction: column;  
         width: 100%;
         gap: 20px;
     }
 
     .card {
-        width: 100%;  /* Full width for cards */
+        width: 100%;  
         padding: 20px;
     }
 
     .contact-content {
-        gap: 20px;  /* Reduce space */
+        gap: 20px;  
         flex-direction: column;
     }
 
@@ -591,7 +588,7 @@ footer .social-icons a:hover {
     }
 
     footer .social-icons a {
-        font-size: 1.3rem;  /* Smaller social icons */
+        font-size: 1.3rem;  
     }
 
     .categoria {
@@ -600,40 +597,39 @@ footer .social-icons a:hover {
     }
 
     .categoria h3 {
-        font-size: 1.8rem;  /* Smaller title size */
+        font-size: 1.8rem;  
     }
 
     .categoria li {
-        font-size: 1rem;  /* Adjust list size */
+        font-size: 1rem;  
     }
 }
 
-/* Small Mobile Devices (max-width: 480px) */
 @media (max-width: 480px) {
     .navbar {
-        padding: 10px;  /* Reduce navbar padding */
+        padding: 10px; 
     }
 
     .hero {
-        height: 50vh;  /* Further reduce hero section height */
-        padding-left: 10px;  /* Even less padding */
+        height: 50vh;  
+        padding-left: 10px; 
     }
 
     .hero h1 {
-        font-size: 2rem;  /* Much smaller headline */
+        font-size: 2rem;  
     }
 
     .hero p {
-        font-size: 0.9rem;  /* Smaller paragraph */
+        font-size: 0.9rem;  
     }
 
     .nav-links li a {
-        font-size: 1rem;  /* Smaller font size for links */
+        font-size: 1rem;  
         padding: 10px 15px;
     }
 
     .card {
-        width: 100%;  /* Full width cards */
+        width: 100%;  
     }
 
     .contact-block {
@@ -641,10 +637,9 @@ footer .social-icons a:hover {
     }
 
     footer .social-icons a {
-        font-size: 1.1rem;  /* Smaller social icons */
+        font-size: 1.1rem;  
     }
 }
-/* Mostrar el menú cuando se active */
 .nav-links.active {
-    display: flex;  /* Mostrar el menú al hacer clic en el botón de hamburguesa */
+    display: flex;  
 }
