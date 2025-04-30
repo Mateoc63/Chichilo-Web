@@ -92,7 +92,7 @@ header {
     font-size: 2rem;
     background: none;
     border: none;
-    color: #fff;
+    color: #dcd6c0;
     cursor: pointer;
 }
 
@@ -587,8 +587,16 @@ footer .social-icons a:hover {
         width: 100%;
     }
 
-    footer .social-icons a {
-        font-size: 1.3rem;  
+    .footer-content {
+        padding-bottom: 50px;
+    }
+
+    .footer-content p {
+        font-size: 0.85rem;
+    }
+
+    .social-icons a {
+        font-size: 1.3rem;
     }
 
     .categoria {
