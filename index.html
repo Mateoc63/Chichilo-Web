@@ -12,24 +12,28 @@
 <body>
     <!-- Navbar -->
     <header>
-        <nav class="navbar">
+        <div class="navbar">
             <div class="logo">
                 <h1>Chichilo Bar</h1>
             </div>
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger-btn">
+                &#9776; 
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#destacados">Carta</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto">Contactanos</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
+    
 
     <!-- Sección Hero -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Bienvenidos a Chichilo Bar</h1>
             <p>Donde cada plato y cada trago <br>son una obra maestra.</p>
-            <a href="#carta" class="btn-primary">Descubre nuestra carta</a>
+            <a href="#destacados" class="btn-primary">Descubre nuestra carta</a>
         </div>
     </section>
 
